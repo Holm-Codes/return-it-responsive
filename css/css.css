@@ -53,44 +53,41 @@ body{
   display: flex; /* Bruger flexbox for at arrangere elementerne */
   flex-direction: row; /* Gør så elementerne ligger horisontalt */
   margin-top: -10px; /* Lidt margin for at justere positionen */
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #sprog{
-  margin-right: 50px; /* Giver lidt margin til højre for sprogbilledet */
+  margin-right: 2rem; /* Giver lidt margin til højre for sprogbilledet */
+  width: 20%;
+  height: 15%;
 }
 
 .burger-menu {
   display: flex; /* Brug flexbox for at arrangere de tre linjer */
   flex-direction: column;  /* Gør linjerne stakket vertikalt */
-  gap: 5px; /* Lægger lidt afstand mellem linjerne */
+  gap: 0.5rem; /* Lægger lidt afstand mellem linjerne */
   cursor: pointer; /* Gør ikonet klikbart */
-  margin-top: 40px; /* Lidt afstand til toppen */
-  margin-right: 10px; /* Lidt afstand til højre */
-  margin-bottom: 10px; /* Lidt afstand til bunden */
-  padding-right: 20px; /* Lidt ekstra plads til højre */
-  z-index: 1001; /* Sørger for at ikonet er synligt over andre elementer */
 }
 
 .burger-menu span {
-  width: 30px; /* Bredden på linjerne */
-  height: 3px; /* Højden på linjerne */
+  width: 2.5rem; /* Bredden på linjerne */
+  height: 0.25rem; /* Højden på linjerne */
   background: var(--text); /* Linjerne bliver sorte */
-  border-radius: 2px; /* Afrunder hjørnerne på linjerne */
+  border-radius: 0.5rem; /* Afrunder hjørnerne på linjerne */
   transition: 0.3s; /* Gør overgangene glidende */
 }
 
 .menu {
   display: none; /* Menuen er skjult */
   position: fixed; /* Menuen er fastlåst i positionen */
-  top: 5px; /* Lidt afstand til toppen */
+  top: 0.2rem; /* Lidt afstand til toppen */
   right: 0; /* Menuen placeres til højre */
-  height: 100vh; /* Menuen fylder hele højden af skærmen */
   background: transparent; /* Baggrundstransparent */
   flex-direction: column; /* Menuen bliver opstillet vertikalt */
   align-items: flex-end; /* Elementerne i menuen justeres til højre */
-  padding: 20px; /* Lidt indvendig afstand */
+  padding: 0.5rem; /* Lidt indvendig afstand */
   margin-top: 60px; /* Placer menuen lidt længere ned */
-  margin-right: 20px; /* Afstand til højre kant */
   gap: 10px; /* Afstand mellem menu punkterne */
   list-style: none; /* Fjern punkttegn fra listen */
   z-index: 1000; /* Sørger for at menuen er synlig over andre elementer */
