@@ -1,0 +1,257 @@
+/**
+ * file: css/css.css
+ * purpose: styling
+ **/
+
+/* Define variables in the :root */
+:root {
+  --backgr: #FFFFFF;
+  --text: #161616;
+  --darkgreen: #173A24;
+  --lightgreen: #BBC397;
+  --logogreen: #29633B;
+  --darkblue: #5C91A4;
+  --lightblue: #BEE3E7;
+}
+
+h1, h2 {
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h3, h4, h5, h6 {
+  font-family: Verdana, sans-serif;
+}
+
+p {
+  font-family: "richmond-text", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+  margin: 0; /* Sætter marginen til 0 for at fjerne standardafstand i siderne af sitet */
+ }
+
+@media (min-width: 320px),(max-width:500px) {
+/* Header/burgermenu styling start */
+
+.header{
+  display: flex; /* Bruger flexbox for at arrangere elementerne */
+  flex-direction: row; /* Lægger elementerne i rækkefølge horisontalt */
+  justify-content: space-between; /* Fordeler pladsen mellem elementerne */
+  align-items: center;/* Centrerer elementerne vertikalt */
+  background: transparent; /* Gør baggrunden transparent */
+  background-color: transparent; /* Baggrundsfarven er transparent */
+  position:fixed;
+  z-index: 100;
+  width:100%;
+}
+
+.menu-placement{
+  display: flex; /* Bruger flexbox for at arrangere elementerne */
+  flex-direction: row; /* Gør så elementerne ligger horisontalt */
+  margin-top: 0.1rem; /* Lidt margin for at justere positionen */
+  align-items: center;
+  margin-right: 0.3rem;
+ 
+}
+
+.logo {
+  width: 35%;
+  height: auto;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+#sprog{
+  margin-right: 0.5rem; /* Giver lidt margin til højre for sprogbilledet */
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.burger-menu {
+  display: flex; /* Brug flexbox for at arrangere de tre linjer */
+  flex-direction: column;  /* Gør linjerne stakket vertikalt */
+  gap: 0.2rem; /* Lægger lidt afstand mellem linjerne */
+  cursor: pointer; /* Gør ikonet klikbart */
+}
+
+.burger-menu span {
+  width: 1.5rem; /* Bredden på linjerne */
+  height: 0.17rem; /* Højden på linjerne */
+  background: var(--text); /* Linjerne bliver sorte */
+  border-radius: 0.8rem; /* Afrunder hjørnerne på linjerne */
+  transition: 0.3s; /* Gør overgangene glidende */
+}
+
+.menu {
+  display: none; /* Menuen er skjult */
+  position: fixed; /* Menuen er fastlåst i positionen */
+  top: 0.2rem; /* Lidt afstand til toppen */
+  right: 0; /* Menuen placeres til højre */
+  background: transparent; /* Baggrundstransparent */
+  flex-direction: column; /* Menuen bliver opstillet vertikalt */
+  align-items: flex-end; /* Elementerne i menuen justeres til højre */
+  padding: 0.5rem; /* Lidt indvendig afstand */
+  margin-top: 60px; /* Placer menuen lidt længere ned */
+  gap: 10px; /* Afstand mellem menu punkterne */
+  list-style: none; /* Fjern punkttegn fra listen */
+  z-index: 1000; /* Sørger for at menuen er synlig over andre elementer */
+}
+
+.menu.open {
+  display: flex; /* Menuen bliver synlig */
+}
+
+/* Menu Items */
+.menu a {
+  font-size: 18px;
+  font-family: Verdana, sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer; /* Gør linkene klikbare */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Gør den klikbare boks til linkene større */
+  transition: transform 0.3s, color 0.3s; /* Gør animationen glidende */
+}
+
+/* Hover effekt (når musen er over linkene) */
+.menu a:hover{
+  color: var(--darkblue); /* Ændrer farven til mørk blå ved hover */
+  transform: scale(1.3); /* Forstørrer teksten lidt ved hover */
+}
+
+/* Aktiv tilstand (når linket er blevet klikket) */
+.menu a:active {
+  transform: scale(1.2); /* Forstørrer teksten lidt, når den er klikket */
+  color: var(--darkblue); 
+}
+
+/* Header/burgermenu styling slut */
+
+/* Hero styling start */
+
+#section1{
+  display: flex; /* Brug flexbox til at arrangere indholdet */
+}
+
+.video-container {
+  width: auto; /* Automatisk bredde */
+  overflow: hidden; /* Skjuler overskydende del af videoen */
+  position: relative; /* For at kunne bruge positionering i containeren */
+  display: flex;
+}
+
+.hero-video {
+  object-fit: cover; /* Sørger for at videoen dækker hele containeren uden at blive forvrænget */
+  object-position: center center; /* Centrerer videoen */
+  width: 100%;
+}
+
+.hero-intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text{
+  position: absolute; /* Positionerer teksten så den ikke rykker sig i forhold til containeren */
+  color: white;
+  text-align:center;
+  align-content: center;
+}
+
+#titel{
+  font-size: 1.5rem;
+}
+
+#under-titel{
+  font-size: 0.7rem;
+  font-family: "railroad-gothic-atf", sans-serif;
+  margin-top: -1rem;
+}
+
+.button1{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  border: none; /* Fjerner kanten */
+  padding: 0.5rem;
+  border-radius: 30px; /* Gør hjørnerne runde */
+  color: var(--backgr);
+  background-color: var(--darkblue);
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: 0.5rem;
+  transition-duration: 0.4s; /* Glidende overgang */
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.button1:hover{
+  color: var(--text); /* Skifter tekstfarven ved hover */
+  background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
+}
+/* Hero styling slut */
+
+
+#hvorfor-returnit-titel{
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: 1.5rem;
+  color: var(--darkblue); 
+}
+
+#hvorfor-returnit-undertekst{
+font-size: 0.8rem;
+}
+
+.hvorfor-returnit-container{
+  text-align: center;
+}
+
+/* Infografik styling start */
+
+#infografik-titel{
+  color: var(--darkblue);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Skjul elementer udenfor containeren */
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.3s ease; /* Smooth overgang */
+}
+
+.carousel-element {
+  display: none; /* Skjul slides som ikke er aktive */
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.carousel-element.active {
+  display: block; /* Vis kun den aktive slide */
+}
+
+img {
+  width: auto;
+  height: 9rem;
+}
+
+.infografik-tekst{
+  margin: 0 0.5rem;
+}
+/* Infografik styling slut */
+
+}
+
+
+
+@media (min-width: 501px) {
+
+}
