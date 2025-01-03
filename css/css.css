@@ -30,6 +30,10 @@ p {
   font-style: normal;
 }
 
+body{
+  margin: 0; /* Sætter marginen til 0 for at fjerne standardafstand i siderne af sitet */
+ }
+
 @media (min-width: 320px),(max-width:500px) {
 /* Header/burgermenu styling start */
 
