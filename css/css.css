@@ -125,6 +125,72 @@ section {
   display: flex; /* Brug flexbox til at arrangere indholdet */
 }
 /* Header/burgermenu styling slut */
+
+/* Hero styling start */
+
+#section1{
+  height: 50vh; /* Sætter højden på hero sektionen */
+  display: flex; /* Brug flexbox til at arrangere indholdet */
+}
+
+.video-container {
+  width: auto; /* Automatisk bredde */
+  overflow: hidden; /* Skjuler overskydende del af videoen */
+  position: relative; /* For at kunne bruge positionering i containeren */
+  display: flex;
+}
+
+.hero-video {
+  object-fit: cover; /* Sørger for at videoen dækker hele containeren uden at blive forvrænget */
+  object-position: center center; /* Centrerer videoen */
+  width: 100%;
+}
+
+.hero-intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text{
+  position: absolute; /* Positionerer teksten så den ikke rykker sig i forhold til containeren */
+  color: white;
+  text-align:center;
+  align-content: center;
+}
+
+#titel{
+  font-size: 100px;
+}
+
+#under-titel{
+  font-size: 40px;
+  font-family: "railroad-gothic-atf", sans-serif;
+}
+
+.button1{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  border: none; /* Fjerner kanten */
+  padding: 15px 30px;
+  padding-top: 16px;
+  border-radius: 30px; /* Gør hjørnerne runde */
+  color: var(--backgr);
+  background-color: var(--darkblue);
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: large;
+  transition-duration: 0.4s; /* Glidende overgang */
+  cursor: pointer;
+}
+
+.button1:hover{
+  color: var(--text); /* Skifter tekstfarven ved hover */
+  background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
+}
+
+/* Hero styling slut */
 }
 
 
