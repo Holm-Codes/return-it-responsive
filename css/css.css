@@ -4,13 +4,28 @@
  **/
 
 /* Define variables in the :root */
- :root {
-   --contrast: lime;
-   --backgr: #000;
- }
+:root {
+  --backgr: #FFFFFF;
+  --text: #161616;
+  --darkgreen: #173A24;
+  --lightgreen: #BBC397;
+  --logogreen: #29633B;
+  --darkblue: #5C91A4;
+  --lightblue: #BEE3E7;
+}
 
-/* Use your variables on elements */
- main {
-   color: var(--contrast);
-   background-color: var(--backgr);
- }
+h1, h2 {
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h3, h4, h5, h6 {
+  font-family: Verdana, sans-serif;
+}
+
+p {
+  font-family: "richmond-text", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
