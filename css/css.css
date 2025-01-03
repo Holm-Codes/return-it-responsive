@@ -29,3 +29,12 @@ p {
   font-weight: 400;
   font-style: normal;
 }
+
+@media (min-width: 320px),(max-width:500px) {
+
+}
+
+
+@media (min-width: 501px) {
+  
+}
