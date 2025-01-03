@@ -52,29 +52,37 @@ body{
 .menu-placement{
   display: flex; /* Bruger flexbox for at arrangere elementerne */
   flex-direction: row; /* Gør så elementerne ligger horisontalt */
-  margin-top: -10px; /* Lidt margin for at justere positionen */
+  margin-top: 0.1rem; /* Lidt margin for at justere positionen */
   align-items: center;
-  justify-content: flex-end;
+  margin-right: 0.3rem;
+ 
+}
+
+.logo {
+  width: 35%;
+  height: auto;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
 }
 
 #sprog{
-  margin-right: 2rem; /* Giver lidt margin til højre for sprogbilledet */
-  width: 20%;
-  height: 15%;
+  margin-right: 0.5rem; /* Giver lidt margin til højre for sprogbilledet */
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .burger-menu {
   display: flex; /* Brug flexbox for at arrangere de tre linjer */
   flex-direction: column;  /* Gør linjerne stakket vertikalt */
-  gap: 0.5rem; /* Lægger lidt afstand mellem linjerne */
+  gap: 0.2rem; /* Lægger lidt afstand mellem linjerne */
   cursor: pointer; /* Gør ikonet klikbart */
 }
 
 .burger-menu span {
-  width: 2.5rem; /* Bredden på linjerne */
-  height: 0.25rem; /* Højden på linjerne */
+  width: 1.5rem; /* Bredden på linjerne */
+  height: 0.17rem; /* Højden på linjerne */
   background: var(--text); /* Linjerne bliver sorte */
-  border-radius: 0.5rem; /* Afrunder hjørnerne på linjerne */
+  border-radius: 0.8rem; /* Afrunder hjørnerne på linjerne */
   transition: 0.3s; /* Gør overgangene glidende */
 }
 
@@ -121,16 +129,11 @@ body{
   color: var(--darkblue); 
 }
 
-section {
-  height: 100vh; /* Gør hver sektion så høj som skærmen */
-  display: flex; /* Brug flexbox til at arrangere indholdet */
-}
 /* Header/burgermenu styling slut */
 
 /* Hero styling start */
 
 #section1{
-  height: 50vh; /* Sætter højden på hero sektionen */
   display: flex; /* Brug flexbox til at arrangere indholdet */
 }
 
@@ -162,12 +165,13 @@ section {
 }
 
 #titel{
-  font-size: 100px;
+  font-size: 1.5rem;
 }
 
 #under-titel{
-  font-size: 40px;
+  font-size: 0.7rem;
   font-family: "railroad-gothic-atf", sans-serif;
+  margin-top: -1rem;
 }
 
 .button1{
@@ -175,24 +179,40 @@ section {
   justify-self: center;
   align-self: center;
   border: none; /* Fjerner kanten */
-  padding: 15px 30px;
-  padding-top: 16px;
+  padding: 0.5rem;
   border-radius: 30px; /* Gør hjørnerne runde */
   color: var(--backgr);
   background-color: var(--darkblue);
   font-family: "railroad-gothic-atf", sans-serif;
-  font-size: large;
+  font-size: 0.5rem;
   transition-duration: 0.4s; /* Glidende overgang */
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 .button1:hover{
   color: var(--text); /* Skifter tekstfarven ved hover */
   background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
 }
-
 /* Hero styling slut */
+
+
+#hvorfor-returnit-titel{
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: 1.5rem;
+  color: var(--darkblue); 
 }
+
+#hvorfor-returnit-undertekst{
+font-size: 0.8rem;
+}
+
+.hvorfor-returnit-container{
+  text-align: center;
+}
+
+}
+
 
 
 @media (min-width: 501px) {
