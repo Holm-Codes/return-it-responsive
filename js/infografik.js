@@ -34,33 +34,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Infografik
 
-let currentIndex = 0;
-const carouselItems = document.querySelectorAll('.carousel-element');
-const totalItems = carouselItems.length;
+// Hent carousel-elementer og dots-container
+const slides = document.querySelectorAll('.carousel-element');
+const dotsContainer = document.querySelector('.carousel-dots');
+let currentIndex = 0; // Start på det første slide
 
-// Funktion til at opdatere carouselen
+// Opret navigationsprikker baseret på antal slides
+slides.forEach((_, index) => {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  if (index === 0) dot.classList.add('active'); // Første prik er aktiv
+  dotsContainer.appendChild(dot);
+
+  // Klik på prikken navigerer til det tilsvarende slide
+  dot.addEventListener('click', () => {
+    currentIndex = index;
+    updateCarousel(); // Opdater carousel
+  });
+});
+
+// Funktion til at opdatere carousel og prikker
 function updateCarousel() {
-  // Fjern "active" fra alle slides
-  carouselItems.forEach(item => item.classList.remove('active'));
+  // Fjern "active" fra alle slides og prikker
+  slides.forEach(slide => slide.classList.remove('active'));
+  dotsContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
 
-  // Tilføj "active" til den nuværende slide
-  carouselItems[currentIndex].classList.add('active');
+  // Tilføj "active" til aktuelt slide og prik
+  slides[currentIndex].classList.add('active');
+  dotsContainer.querySelectorAll('.dot')[currentIndex].classList.add('active');
 }
 
-// Skift til næste slide
+// Skift til næste slide (uden %)
 function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalItems; // Gå videre til næste slide
+  currentIndex += 1; // Øg currentIndex med 1
+  if (currentIndex >= slides.length) {
+    currentIndex = 0; // Hvis vi når slutningen, gå tilbage til første slide
+  }
   updateCarousel();
 }
 
-// Skift til forrige slide
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Gå tilbage til forrige slide
-  updateCarousel();
-}
-
-// Start carouselen
+// Initial opdatering
 updateCarousel();
 
 // Auto-rotér carouselen hver 5. sekund (valgfrit)
-setInterval(nextSlide, 5000);
+// setInterval(nextSlide, 5000);
