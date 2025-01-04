@@ -246,13 +246,13 @@ img {
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
 }
 
 .carousel-dots .dot {
-  width: 10px;
-  height: 10px;
+  width: 0.7rem;
+  height: 0.7rem;
   border-radius: 50%;
   background-color: var(--lightblue); /* Ikke-aktiv prik */
   cursor: pointer;
@@ -268,7 +268,6 @@ img {
 /* Infografik styling slut */
 
 }
-
 
 
 @media (min-width: 501px) {
