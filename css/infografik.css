@@ -197,6 +197,10 @@ body{
 /* Hero styling slut */
 
 
+#section2 {
+  margin-top: -0.5rem;
+}
+
 #hvorfor-returnit-titel{
   font-family: "railroad-gothic-atf", sans-serif;
   font-size: 1.5rem;
@@ -205,12 +209,51 @@ body{
 
 #hvorfor-returnit-undertekst{
 font-size: 0.8rem;
+margin-top: -2rem;
+padding: 1rem;
 }
 
 .hvorfor-returnit-container{
   text-align: center;
 }
 
+.ikon-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.ikon-container-tekst{
+  margin-top: -10px;
+  width: 210px;
+}
+
+.ikon-container-tekst h5{
+  font-size: 0.7rem;
+}
+
+.ikon-container-tekst p{
+  font-size: 0.7rem;
+  margin-top: -0.85rem;
+}
+
+.hvorfor-returnit-img{
+  height: 100px;
+  width: 100px;
+}
+
+#divider{
+  width: 100%; /* Fleksibel bredde */
+  height: 2rem;
+  object-fit: cover; /* Bevarer proportioner uden forvrængning */
+  display: block; /* Sørg for, at billedet ikke flyder ved siden af noget andet */
+  margin: 0 auto; /* Centrerer billedet horisontalt */
+  margin-top: 1rem;;
+}
+ 
+}
 /* Infografik styling start */
 
 #infografik-titel{
@@ -299,7 +342,6 @@ color: var(--darkblue);
 }
 /* Footer styling slut */
 
-}
 
 
 @media (min-width: 501px) {
