@@ -336,6 +336,172 @@ img {
 
 /* Datasektion styling slut */
 
+/*Genanvendelse sektion styling Start*/
+
+.fade-in {
+  opacity: 0; 
+  transform: translateY(50px); 
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.animate {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+.bundsektion {
+  width: 100%;
+  background-image: url('../images/baggrund_bundsektion.webp'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: top center; 
+}
+
+.bundsektion-wrapper {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; 
+}
+
+.bundsektion-øverste-content {
+  text-align: center;
+  padding-top: 6rem; 
+  margin: 1rem;
+}
+
+.overskrift-bundsektion {
+  font-size: 2rem;
+  color: var(--darkblue);
+}
+
+.underrubrik {
+  font-size: 0.8rem;
+  color: var(--backgr);
+  line-height: 1.6;
+}
+
+.bundsektion-content {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+.grafik-billeder {
+  display: flex;
+  flex-direction: column;
+}
+
+.grafik-billeder img {
+  height: auto; /* Bevare proportionerne */
+}
+
+/* 
+Tilføjer en op-og-ned animation til elementer med klassen "animated-element". 
+Animationen varer 2 sekunder, kører uendeligt og skifter retning ved hver gentagelse. 
+".bestik" starter animationen med det samme (ingen forsinkelse).
+".champagneglas" har en forsinkelse på 1 sekund for at skabe en forskudt effekt.
+Keyframes "moveUpAndDown" styrer bevægelsen, hvor elementet flyttes 10px op og ned
+*/
+.animated-element {
+  animation: moveUpAndDown 2s ease-in-out infinite alternate;
+}
+
+/* Bestikket: Ingen forsinkelse */
+.bestik {
+  max-width: 40%;
+  height: auto;
+  align-self: center;
+  animation-delay: 0s; /* Starter med det samme */
+}
+
+/* Champagneglas: Kort forsinkelse */
+.champagneglas {
+  max-width: 50%;
+  height: auto;
+  align-self: center;
+  animation-delay: 1s; /* Starter efter 1 sekund */
+}
+
+/* Keyframes for op-og-ned-bevægelse */
+@keyframes moveUpAndDown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.mellemrubrik-wrapper {
+margin: 1rem;
+}
+
+.mellemrubrik-wrapper h3 {
+  font-size: 25px;
+  color: var(--darkblue);
+  margin-bottom: 10px;
+}
+
+.mellemrubrik-wrapper p {
+  font-size: 20px;
+  color: var(--backgr);
+  line-height: 1.5;
+}
+
+.nederste-mellemrubrik {
+  margin-top: 100px;
+  font-size: 20px;
+  color: var(--backgr);
+  line-height: 1.5;
+}
+
+.nederste-mellemrubrik ul {
+  margin-top: -20px; 
+  padding-left: 20px; 
+  font-family: "richmond-text", sans-serif;
+}
+
+.slut-overskrift {
+  font-size: 25px;
+  color: var(--darkblue);
+  margin-bottom: 10px;
+}
+
+.slut-tekst {
+  font-size: 20px;
+  color: var(--backgr);
+  line-height: 1.5;  
+}
+.bundsektion-sluttekst{
+  display: block;
+  margin: 1rem;
+  margin-top: 100px;
+  font-family: "railroad-gothic-atf", sans-serif;
+  color: var(--darkgreen);
+}
+
+.button2{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  border: none; /* Fjerner kanten */
+  padding: 15px 30px;
+  padding-top: 16px;
+  border-radius: 30px; /* Gør hjørnerne runde */
+  color: var(--backgr);
+  background-color: var(--darkblue);
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: large;
+  transition-duration: 0.4s; /* Glidende overgang */
+  cursor: pointer;
+}
+
+.button2:hover{
+  color: var(--text); /* Skifter tekstfarven ved hover */
+  background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
+}
+/*Genanvendelse sektion styling Slut*/
+
+
 /* Footer styling start */
 .footer-container{
   display: flex;
