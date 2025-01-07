@@ -34,9 +34,6 @@ body{
   margin: 0; /* Sætter marginen til 0 for at fjerne standardafstand i siderne af sitet */
  }
 
-@media (min-width: 320px),(max-width:500px) {
-/* Header/burgermenu styling start */
-
 .header{
   display: flex; /* Bruger flexbox for at arrangere elementerne */
   flex-direction: row; /* Lægger elementerne i rækkefølge horisontalt */
@@ -137,17 +134,28 @@ body{
   display: flex; /* Brug flexbox til at arrangere indholdet */
 }
 
+#section5 {
+  margin-top: -193px;
+}
+
 .video-container {
-  width: auto; /* Automatisk bredde */
-  overflow: hidden; /* Skjuler overskydende del af videoen */
-  position: relative; /* For at kunne bruge positionering i containeren */
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 80vh; /* Static height */
+  overflow: hidden; /* Hide overflow */
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-video {
-  object-fit: cover; /* Sørger for at videoen dækker hele containeren uden at blive forvrænget */
-  object-position: center center; /* Centrerer videoen */
-  width: 100%;
+  position: absolute;
+  height: 100%; /* Match container height */
+  width: auto; /* Maintain aspect ratio */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
 }
 
 .hero-intro{
@@ -217,6 +225,187 @@ padding: 1rem;
   text-align: center;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50px); 
+  margin-right: -25px;
+}
+
+
+.circle {
+  width: 600px; 
+  height: 800px;
+  position: relative; 
+}
+
+/* Placering af ikonerne cirkelært */
+.process-step {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform-origin: center;
+  transform: translate(-50%, -50%)
+             rotate(calc(var(--angle) * 1deg))
+             translate(0, -300px) 
+             rotate(calc(-1 * var(--angle) * 1deg));
+  transition: transform 0.5s;
+}
+
+.process-step img {
+  width: 80px; 
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 5px;
+
+}
+
+.process-step img[src*="afhentning.webp"] {
+  width: 190px; 
+  height: 120px;
+  margin-bottom: -15px;
+}
+
+.process-step img[src*="vask_omsmeltning.webp"] {
+  width: 120px; 
+  height: 100px;
+}
+
+.process-step figcaption {
+  margin-top: 0px;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  color: #173A24;
+  font-weight: bolder;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* 
+Tilføjer en hover-effekt til elementer med klassen "process-step". 
+Når brugeren holder musen over et ikon:
+Elementet forskydes og roteres tilbage til sin oprindelige vinkel for at bevare retningen.
+Elementet flyttes længere væk fra midten (fra -350px til -370px) for at skabe en hæve-effekt.
+Elementet skaleres op til 110% af sin oprindelige størrelse (scale(1.1)) for at fremhæve det.
+Overgangen sker glidende med en varighed på 0.5 sekunder.
+*/
+.process-step:hover {
+  transform: translate(-50%, -50%)
+             rotate(calc(var(--angle) * 1deg))
+             translate(0, -320px)
+             rotate(calc(-1 * var(--angle) * 1deg))
+             scale(1.1); /* Hover-effekt */
+  transition: transform 0.5s;
+}
+.process-step.active img {
+  transform: scale(1.2); /* Forstøre billedet ved det valgte ikon */
+  transition: transform 0.5s; /* Giver en glidende overgang */
+  margin-bottom: 10px;
+}
+ 
+/* 
+"opacity: 1" gør elementet synligt som standard.
+En transition på 0.3 sekunder med "ease-in-out" sørger for en glidende overgang for ændringer
+
+Når klassen "fade" tilføjes, sættes "opacity" til 0, hvilket gør elementet usynligt (fade-out-effekt).
+*/
+.process-details {
+  position: absolute;
+  top: 185%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #173A24;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.5;
+  opacity: 1; /* Starter synlig */
+  transition: opacity 0.3s ease-in-out; /* Glidende overgang */
+}
+.process-details.fade {
+  opacity: 0; /* Fade out når klassen "fade" tilføjes */
+}
+
+
+#process-title {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#process-description {
+  font-family: "richmond-text", sans-serif;
+  margin: 10px 0 0; 
+  line-height: 1.5;
+  color: #173A24;
+  font-size: 15px; 
+}
+
+/* 
+Skjuler alle pile som standard og sørger for, at de kun bliver synlige, når klassen "active" tilføjes. 
+Pilen placeres, roteres og flyttes væk fra midten ved hjælp af "transform". 
+En overgang på 0.5 sekunder gør, at pilen vises på en "glidende" måde.
+*/
+.pil {
+  display: none; 
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-image: url('../images/pil.webp'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 42%;
+  left: 51.6%;
+  transform-origin: center bottom;
+  transform: translate(-42%, -51.6%)
+             rotate(calc(var(--angle) * 1deg))
+             translate(0, -250px);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Når pilen har "active"-klassen, vises den */
+.pil.active {
+  display: block; /* Gør pilen synlig */
+}
+
+.process-tekst-knap {
+  text-align: center; /* Centrerer alt */
+  color: #173A24; 
+}
+
+.process-tekst-knap h3 {
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+
+.process-tekst-knap .button {
+display: inline-block;
+font-family: "railroad-gothic-atf", sans-serif;
+padding: 25px 35px; 
+background-color: #5C91A4;
+color: #ffffff;
+border-radius: 50px; 
+text-decoration: none;
+font-size: 20px;
+transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.process-tekst-knap .button:hover,
+.bundsektion-sluttekst .button:hover {
+  transform: scale(1.1);
+}
+
+/* Infografik styling slut */
+
+/* Return It i tal sektion styling start */
+
+
 .ikon-container{
   display: flex;
   flex-direction: column;
@@ -280,12 +469,18 @@ padding: 1rem;
 
 #infografik-titel{
   color: var(--darkblue);
+  text-align: center;
 }
 
 .carousel-container {
   position: relative;
   width: 100%;
   overflow: hidden; /* Skjul elementer udenfor containeren */
+}
+
+#section3-mobile {
+  display:none;
+  height: 900px;
 }
 
 .carousel {
@@ -297,6 +492,7 @@ padding: 1rem;
   display: none; /* Skjul slides som ikke er aktive */
   text-align: center;
   font-size: 0.8rem;
+  width: 100%;
 }
 
 .carousel-element.active {
@@ -342,11 +538,13 @@ img {
   background-repeat: no-repeat;
   object-fit: cover; /* Bevarer proportioner uden forvrængning */ 
 }
-}
+
 
 .data-container{
   display: flex;
   flex-direction: column;
+  padding-top:150px;
+  padding-bottom:240px;
 }
 
 .data-section{
@@ -358,6 +556,7 @@ img {
 
 .data-text{
   text-align: center;
+  margin-top:-62px;
 }
 
 /* Datasektion styling slut */
@@ -557,12 +756,62 @@ color: var(--darkblue);
  color: var(--darkblue);
 }
 /* Footer styling slut */
- 
+
+.circle-header {
+  text-align: center; 
+  margin: 10px auto; 
+  font-family: "railroad-gothic-atf", sans-serif; 
+  font-weight: bold;
+  font-size: 40px; 
+  color: #5C91A4; 
+  text-transform: uppercase; 
+  max-width: 550px;
+  line-height: 1; 
+  margin-bottom: 355px;
 }
 
 
-
-
 @media (min-width: 501px) {
+  #section1 {
+    display:block;
+    width:100%; 
+  }
 
+  .video-container {
+    width: 100%;
+    height: 60vh;
+    display:block;
+  } 
+
+  .hero-video {
+    overflow:hidden;
+    position: relative;
+    width: 100%; /* Maintain aspect ratio */
+    height:auto;
+  }
+  
+  #divider{
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin-left: -3px;
+  }
+}
+
+@media (min-width: 724px) {
+  
+
+  #section3{
+    display:none;
+  }
+  #section3-mobile {
+    display:block;
+  }
+}
+
+@media (min-width: 501px) and (max-width:840px) {
+  .hero-video {
+    width:170%;
+  } 
 }
