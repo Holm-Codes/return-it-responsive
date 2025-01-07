@@ -335,9 +335,13 @@ img {
 
 /* Datasektion styling start */
 #section4{
-  background-image: url("/images/data-background.png");
+  width: 100%;
+  height: auto;
+  background-image: url("../images/data-background.png");
+  background-size: cover; 
   background-repeat: no-repeat;
-  background-position: center;
+  object-fit: cover; /* Bevarer proportioner uden forvrængning */ 
+}
 }
 
 .data-container{
