@@ -436,45 +436,41 @@ margin: 1rem;
 }
 
 .mellemrubrik-wrapper h3 {
-  font-size: 25px;
+  font-size: 2rem;
   color: var(--darkblue);
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .mellemrubrik-wrapper p {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: var(--backgr);
   line-height: 1.5;
 }
 
 .nederste-mellemrubrik {
-  margin-top: 100px;
-  font-size: 20px;
+  font-size: 0.8rem;
   color: var(--backgr);
   line-height: 1.5;
 }
 
 .nederste-mellemrubrik ul {
-  margin-top: -20px; 
-  padding-left: 20px; 
   font-family: "richmond-text", sans-serif;
 }
 
 .slut-overskrift {
-  font-size: 25px;
+  font-size: 1.5rem;
   color: var(--darkblue);
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .slut-tekst {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: var(--backgr);
   line-height: 1.5;  
 }
 .bundsektion-sluttekst{
   display: block;
   margin: 1rem;
-  margin-top: 100px;
   font-family: "railroad-gothic-atf", sans-serif;
   color: var(--darkgreen);
 }
@@ -493,6 +489,8 @@ margin: 1rem;
   font-size: large;
   transition-duration: 0.4s; /* Glidende overgang */
   cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .button2:hover{
