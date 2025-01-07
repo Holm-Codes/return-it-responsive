@@ -165,11 +165,11 @@ body{
 }
 
 #titel{
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
 #under-titel{
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-family: "railroad-gothic-atf", sans-serif;
   margin-top: -1rem;
 }
@@ -179,15 +179,15 @@ body{
   justify-self: center;
   align-self: center;
   border: none; /* Fjerner kanten */
-  padding: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  padding-top: 16px;
   border-radius: 30px; /* Gør hjørnerne runde */
   color: var(--backgr);
   background-color: var(--darkblue);
   font-family: "railroad-gothic-atf", sans-serif;
-  font-size: 0.5rem;
   transition-duration: 0.4s; /* Glidende overgang */
   cursor: pointer;
-  margin-top: 1rem;
+
 }
 
 .button1:hover{
@@ -203,7 +203,7 @@ body{
 
 #hvorfor-returnit-titel{
   font-family: "railroad-gothic-atf", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--darkblue); 
 }
 
@@ -252,8 +252,30 @@ padding: 1rem;
   margin: 0 auto; /* Centrerer billedet horisontalt */
   margin-top: 1rem;;
 }
- 
+
+.button2{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  border: none; /* Fjerner kanten */
+  padding: 15px 30px;
+  padding-top: 16px;
+  border-radius: 30px; /* Gør hjørnerne runde */
+  color: var(--backgr);
+  background-color: var(--darkblue);
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: large;
+  transition-duration: 0.4s; /* Glidende overgang */
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
+
+.button2:hover{
+  color: var(--text); /* Skifter tekstfarven ved hover */
+  background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
+}
+
 /* Infografik styling start */
 
 #infografik-titel{
@@ -475,7 +497,7 @@ margin: 1rem;
   color: var(--darkgreen);
 }
 
-.button2{
+.button3{
   display: flex;
   justify-self: center;
   align-self: center;
@@ -483,8 +505,8 @@ margin: 1rem;
   padding: 15px 30px;
   padding-top: 16px;
   border-radius: 30px; /* Gør hjørnerne runde */
-  color: var(--backgr);
-  background-color: var(--darkblue);
+  color: var(--text);
+  background-color: var(--lightblue);
   font-family: "railroad-gothic-atf", sans-serif;
   font-size: large;
   transition-duration: 0.4s; /* Glidende overgang */
@@ -493,9 +515,9 @@ margin: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.button2:hover{
-  color: var(--text); /* Skifter tekstfarven ved hover */
-  background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
+.button3:hover{
+  color: var(--backgr); /* Skifter tekstfarven ved hover */
+  background-color: var(--darkblue); /* Skifter baggrundsfarven ved hover */
 }
 /*Genanvendelse sektion styling Slut*/
 
@@ -531,6 +553,9 @@ color: var(--darkblue);
  color: var(--darkblue);
 }
 /* Footer styling slut */
+ 
+}
+
 
 
 
