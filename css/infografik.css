@@ -316,6 +316,7 @@ img {
   background-image: url("/images/data-background.png");
   background-repeat: no-repeat;
   background-position: center;
+  object-fit: scale-down;
 }
 
 .data-container{
