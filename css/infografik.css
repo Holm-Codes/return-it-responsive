@@ -336,7 +336,7 @@ img {
 
 /* Datasektion styling slut */
 
-*Genanvendelse sektion styling Start*/
+/*Genanvendelse sektion styling Start*/
 
 .fade-in {
   opacity: 0; 
@@ -365,16 +365,16 @@ img {
 .bundsektion-øverste-content {
   text-align: center;
   padding-top: 6rem; 
+  margin: 1rem;
 }
 
 .overskrift-bundsektion {
   font-size: 2rem;
   color: var(--darkblue);
-  margin-bottom: 1rem;
 }
 
 .underrubrik {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--backgr);
   line-height: 1.6;
 }
@@ -383,15 +383,11 @@ img {
   display: flex; 
   flex-direction: column; 
   align-items: flex-start; 
-  gap: 100px; 
 }
 
 .grafik-billeder {
   display: flex;
   flex-direction: column;
-  gap: 200px; 
-  margin: 0 auto; 
-  margin-top: 60px;
 }
 
 .grafik-billeder img {
@@ -475,19 +471,33 @@ margin: 1rem;
   color: var(--backgr);
   line-height: 1.5;  
 }
-.bundsektion-sluttekst .button {
+.bundsektion-sluttekst{
   display: block;
-  margin: 0 auto;
-  width: fit-content; 
+  margin: 1rem;
   margin-top: 100px;
   font-family: "railroad-gothic-atf", sans-serif;
-  padding: 25px 35px;
-  background-color: var(--lightblue);
   color: var(--darkgreen);
-  border-radius: 50px; 
-  text-decoration: none;
-  font-size: 20px;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button2{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  border: none; /* Fjerner kanten */
+  padding: 15px 30px;
+  padding-top: 16px;
+  border-radius: 30px; /* Gør hjørnerne runde */
+  color: var(--backgr);
+  background-color: var(--darkblue);
+  font-family: "railroad-gothic-atf", sans-serif;
+  font-size: large;
+  transition-duration: 0.4s; /* Glidende overgang */
+  cursor: pointer;
+}
+
+.button2:hover{
+  color: var(--text); /* Skifter tekstfarven ved hover */
+  background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
 }
 /*Genanvendelse sektion styling Slut*/
 
