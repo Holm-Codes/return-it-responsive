@@ -310,6 +310,32 @@ img {
 }
 /* Infografik styling slut */
 
+
+/* Datasektion styling start */
+#section4{
+  background-image: url("/images/data-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.data-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.data-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-text{
+  text-align: center;
+}
+
+/* Datasektion styling slut */
+
 /* Footer styling start */
 .footer-container{
   display: flex;
