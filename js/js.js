@@ -31,6 +31,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// Infografik
+
+// Hent carousel-elementer og dots-container
+const slides = document.querySelectorAll('.carousel-element');
+const dotsContainer = document.querySelector('.carousel-dots');
+let currentIndex = 0; // Start på det første slide
+
+// Opret navigationsprikker baseret på antal slides
+slides.forEach((_, index) => {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  if (index === 0) dot.classList.add('active'); // Første prik er aktiv
+  dotsContainer.appendChild(dot);
+
+  // Klik på prikken navigerer til det tilsvarende slide
+  dot.addEventListener('click', () => {
+    currentIndex = index;
+    updateCarousel(); // Opdater carousel
+  });
+});
+
+// Funktion til at opdatere carousel og prikker
+function updateCarousel() {
+  // Fjern "active" fra alle slides og prikker
+  slides.forEach(slide => slide.classList.remove('active'));
+  dotsContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+
+  // Tilføj "active" til aktuelt slide og prik
+  slides[currentIndex].classList.add('active');
+  dotsContainer.querySelectorAll('.dot')[currentIndex].classList.add('active');
+}
+
+// Skift til næste slide (uden %)
+function nextSlide() {
+  currentIndex += 1; // Øg currentIndex med 1
+  if (currentIndex >= slides.length) {
+    currentIndex = 0; // Hvis vi når slutningen, gå tilbage til første slide
+  }
+  updateCarousel();
+}
+
+// Initial opdatering
+updateCarousel();
+
+// Auto-rotér carouselen hver 5. sekund (valgfrit)
+// setInterval(nextSlide, 5000);
+
 // Fade-in effekter for andre tekst-sektioner
 // Find alle elementer med klassen "fade-in" og observer, hvornår de bliver synlige i viewporten.
 // Når de kommer i syne, tilføjes klassen "animate" for at starte animationen.
