@@ -92,7 +92,7 @@ body{
   flex-direction: column; /* Menuen bliver opstillet vertikalt */
   align-items: flex-end; /* Elementerne i menuen justeres til højre */
   padding: 0.5rem; /* Lidt indvendig afstand */
-  margin-top: 60px; /* Placer menuen lidt længere ned */
+  margin-top: 30px; /* Placer menuen lidt længere ned */
   gap: 10px; /* Afstand mellem menu punkterne */
   list-style: none; /* Fjern punkttegn fra listen */
   z-index: 1000; /* Sørger for at menuen er synlig over andre elementer */
@@ -104,7 +104,7 @@ body{
 
 /* Menu Items */
 .menu a {
-  font-size: 18px;
+  font-size: 12px;
   font-family: Verdana, sans-serif;
   font-weight: 700;
   color: var(--text);
@@ -833,6 +833,15 @@ display: none;
 .champagneglas1 {
   display: block;
   }
+
+  .menu a {
+    font-size: 18px;
+  }
+
+  .menu {
+    margin-top: 80px; /* Placer menuen lidt længere ned */
+  }
+
 
 }
 
