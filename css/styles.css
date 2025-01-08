@@ -439,7 +439,8 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   object-fit: cover; /* Bevarer proportioner uden forvrængning */
   display: block; /* Sørg for, at billedet ikke flyder ved siden af noget andet */
   margin: 0 auto; /* Centrerer billedet horisontalt */
-  margin-top: 1rem;;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .button2{
@@ -457,7 +458,7 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   transition-duration: 0.4s; /* Glidende overgang */
   cursor: pointer;
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 40px;
 }
 
 .button2:hover{
@@ -770,7 +771,7 @@ color: var(--darkblue);
   text-transform: uppercase; 
   max-width: 550px;
   line-height: 1; 
-  margin-bottom: 355px;
+  margin-bottom: 370px;
 }
 
 
@@ -915,14 +916,10 @@ color: var(--darkblue);
 .process-tekst-knap {
   text-align: center; /* Centrerer alt */
   color: #173A24; 
-}
-
-.process-tekst-knap h3 {
   font-size: 20px;
   font-weight: bold;
-  
+  margin-top: -40px;
 }
-
 
 }
 
