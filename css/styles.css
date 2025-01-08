@@ -863,7 +863,7 @@ color: var(--darkblue);
   flex-direction: row;
   align-items: baseline;
   justify-content: space-around; /* Fordeler ikonerne */
-  width:1700px;
+  width:100%
   margin:auto;
   margin-top: 35px;
 
