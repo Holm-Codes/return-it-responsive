@@ -817,14 +817,39 @@ color: var(--darkblue);
     font-size: 3rem;
   }
 
+  .button1 {
+    width: 270px;
+    padding: 15px;
+    align-self: center;
+    justify-content: center;
+    font-size: 25px;
+    padding-top: 20px;
+  }
+
   .logo {
     width: 100px;
   }
 
-  .burger-menu span {
-    width: 2rem; /* Bredden på linjerne */
-    height: 1rem; /* Højden på linjerne */
+  .burger-menu {
+    gap: 7px; /* Lægger lidt afstand mellem linjerne */
+   
   }
+
+  .burger-menu span {
+    width: 50px; /* Bredden på linjerne */
+    height: 5px; /* Højden på linjerne */
+    margin-right: 10px;
+  
+  }
+
+  #sprog {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    margin-bottom: -7px;
+  }
+
+
 }
 
 @media (min-width: 501px) and (max-width:840px) {
