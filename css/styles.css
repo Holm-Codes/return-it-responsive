@@ -808,10 +808,28 @@ color: var(--darkblue);
   #section3-mobile {
     display:block;
   }
+  
+  #titel {
+    font-size: 10rem;
+  }
+
+  #under-titel {
+    font-size: 3rem;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .burger-menu span {
+    width: 2rem; /* Bredden på linjerne */
+    height: 1rem; /* Højden på linjerne */
+  }
 }
 
 @media (min-width: 501px) and (max-width:840px) {
   .hero-video {
     width:170%;
   } 
+
 }
