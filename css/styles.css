@@ -687,6 +687,10 @@ margin: 1rem;
   font-family: "richmond-text", sans-serif;
 }
 
+#nederste-mellemrubrik-tekst{
+  margin-top: -30px;
+}
+
 .slut-overskrift {
   font-size: 1.5rem;
   color: var(--darkblue);
@@ -995,6 +999,9 @@ margin-top: -10px;
 
 ul{
   font-size: 20px;
+  color: var(--backgr);
+  font-family: "richmond-text", sans-serif;
+  font-weight: 300;
 }
 
 .slut-overskrift {
