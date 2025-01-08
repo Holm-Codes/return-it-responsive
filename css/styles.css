@@ -401,7 +401,7 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   transform: scale(1.1);
 }
 
-/* Infografik styling slut */
+/* Infografik Desktop styling slut */
 
 /* Return It i tal sektion styling start */
 
@@ -465,7 +465,10 @@ transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s eas
   background-color: var(--lightblue); /* Skifter baggrundsfarven ved hover */
 }
 
-/* Infografik styling start */
+/* Return It i tal sektion styling slut */
+
+
+/* Infografik Mobil styling start */
 
 #infografik-titel{
   color: var(--darkblue);
