@@ -32,12 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Infografik
+// Infografik med swipe-funktionalitet
 
 // Hent carousel-elementer og dots-container
 const slides = document.querySelectorAll('.carousel-element');
 const dotsContainer = document.querySelector('.carousel-dots');
 let currentIndex = 0; // Start på det første slide
+let startX = 0; // Startposition for touch
+let endX = 0; // Slutposition for touch
 
 // Opret navigationsprikker baseret på antal slides
 slides.forEach((_, index) => {
@@ -64,17 +66,49 @@ function updateCarousel() {
   dotsContainer.querySelectorAll('.dot')[currentIndex].classList.add('active');
 }
 
-// Skift til næste slide (uden %)
+// Skift til næste slide
 function nextSlide() {
-  currentIndex += 1; // Øg currentIndex med 1
+  currentIndex += 1;
   if (currentIndex >= slides.length) {
     currentIndex = 0; // Hvis vi når slutningen, gå tilbage til første slide
   }
   updateCarousel();
 }
 
+// Skift til forrige slide
+function prevSlide() {
+  currentIndex -= 1;
+  if (currentIndex < 0) {
+    currentIndex = slides.length - 1; // Hvis vi er før første slide, gå til sidste slide
+  }
+  updateCarousel();
+}
+
+// Håndtering af swipe-bevægelser
+slides.forEach(slide => {
+  slide.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX; // Registrer startpositionen
+  });
+
+  slide.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX; // Registrer slutpositionen under bevægelse
+  });
+
+  slide.addEventListener('touchend', () => {
+    // Beregn swipe-retning
+    if (startX - endX > 50) {
+      // Swipe til venstre
+      nextSlide();
+    } else if (endX - startX > 50) {
+      // Swipe til højre
+      prevSlide();
+    }
+  });
+});
+
 // Initial opdatering
 updateCarousel();
+
 
 // Auto-rotér carouselen hver 5. sekund (valgfrit)
 // setInterval(nextSlide, 5000);
