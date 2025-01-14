@@ -89,3 +89,50 @@ steps.forEach((step, index) => {
 // Sætter standardteksten ved start
 processTitle.textContent = "Sådan sikrer Return It en bæredygtig emballageløsning for dig";
 processDescription.textContent = "Klik på et ikon og følg hvert trin i genanvendelsesprocessen";
+
+/**
+ *  * Hvad er DOM-manipulation?
+ * 
+ * DOM-manipulation refererer til processen, hvor JavaScript bruges til at ændre eller interagere
+ * med HTML-elementer og deres egenskaber i dokumentets struktur (DOM - Document Object Model).
+ * 
+ * Dette gør det muligt at:
+ * 1. Ændre indholdet af elementer (f.eks. opdatere tekst eller billeder).
+ * 2. Tilføje, fjerne eller oprette HTML-elementer dynamisk.
+ * 3. Ændre klasser eller stilarter på elementer for at opdatere deres udseende.
+ * 4. Reagere på brugerinteraktioner som klik, tastetryk eller scroll og opdatere siden i realtid.
+ * 
+ * Kort sagt bruges DOM-manipulation til at gøre websider interaktive og dynamiske ved at tilpasse,
+ * hvordan de præsenterer sig for brugeren.
+ * 
+ * 
+ * Samlet oversigt over DOM-manipulation i koden:
+ *
+ * 1. **Hente elementer fra DOM'en**:
+ *    - Ved hjælp af `getElementById` og `querySelectorAll` hentes specifikke HTML-elementer:
+ *      - `processTitle` og `processDescription`: Bruges til at vise overskriften og beskrivelsen i midten af cirklen.
+ *      - `steps` og `pile`: Indeholder henholdsvis ikonerne og pilene i processen.
+ *
+ * 2. **Tilføje hændelser**:
+ *    - `addEventListener` tilføjes til hvert ikon (`steps`) for at håndtere klik fra brugeren.
+ *    - Når brugeren klikker på et ikon, opdateres indhold og klasser dynamisk.
+ *
+ * 3. **Ændre indhold**:
+ *    - `textContent` bruges til at opdatere teksten i midten af cirklen baseret på det trin, brugeren har klikket på.
+ *    - Beskrivelsen og titlen hentes fra objektet `processData`, som indeholder information om hvert trin.
+ *
+ * 4. **Ændre klasser**:
+ *    - `classList.add` og `classList.remove` bruges til at tilføje eller fjerne klasser:
+ *      - Klassen `fade` styrer fade-out-effekten, når teksten ændres.
+ *      - Klassen `active` fremhæver det valgte ikon og den tilsvarende pil.
+ *
+ * 5. **Dynamisk timing**:
+ *    - `setTimeout` bruges til at vente på, at fade-out-effekten er færdig, før teksten opdateres og fade-in-effekten begynder.
+ *
+ * 6. **Opstartstilstand**:
+ *    - Ved starten sættes en standardtitel og -beskrivelse med `processTitle.textContent` og `processDescription.textContent`.
+ *
+ * Formålet med denne DOM-manipulation er at skabe en interaktiv brugeroplevelse, hvor brugeren kan klikke på ikoner
+ * for at lære om hvert trin i processen. Samtidig opdateres visuelle elementer som pile og tekst dynamisk, hvilket
+ * forbedrer engagementet og forståelsen af processen.
+ */

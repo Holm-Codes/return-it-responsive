@@ -3,7 +3,12 @@
  * purpose: Behaviors
  **/
 console.log('Success: JavaScript from js/js.js running!')
-
+// "use strict" aktiverer "strict mode" i JavaScript, som gør din kode mere sikker og robust.
+// Det hjælper ved at:
+// 1. Fange fejl tidligt: F.eks. hvis du ved et uheld prøver at bruge en variabel uden at definere den først.
+// 2. Forhindre brug af visse "farlige" funktioner og funktionaliteter, som ellers kan skabe problemer.
+// 3. Gøre din kode mere forudsigelig og let at debugge, da den følger strammere regler.
+// Kort sagt: Det er som at sige til JavaScript: "Ingen sjusk – følg reglerne!"
 "use strict";
 
 console.log('Success: JavaScript from js/burgermenu.js running!')
@@ -29,28 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerMenu.addEventListener('click', () => { 
       // Når brugeren klikker på burger-menuen (de tre streger):
       menu.classList.toggle('open'); 
-      // Klassen "open" tilføjes til menuen, hvis den ikke allerede er der.
-      // Hvis klassen "open" allerede findes, fjernes den i stedet.
-      // Dette skifter menuens synlighed (åben/lukket) baseret på CSS, hvor "open" gør menuen synlig.
+      // "toggle" skifter klassen "open" frem og tilbage:
+      // - Hvis klassen ikke findes på menuen, tilføjes den.
+      // - Hvis klassen allerede findes, fjernes den.
+      // Dette bruges til at kontrollere menuens synlighed (åben/lukket) ved hjælp af CSS.
   });
 
-  // For hver af menuens links (a-tags) gør følgende:
-  menuLinks.forEach(link => { 
-      // Går gennem alle links i menuen ét ad gangen.
+// For hver af menuens links (a-tags) gør følgende:
+menuLinks.forEach(link => { 
+  // Tilføj en 'click' event listener til hvert link
+  link.addEventListener('click', (e) => { 
+      // "e" er event-objektet, som automatisk sendes af browseren, når hændelsen sker.
+      // Det indeholder information om hændelsen (her et klik), og hvilket element der blev klikket på.
 
-      // Tilføj en 'click' event listener til hvert link
-      link.addEventListener('click', (e) => { 
-          // Når brugeren klikker på et af menuens links:
-          
-          menuLinks.forEach(link => link.classList.remove('active')); 
-          // Fjerner klassen "active" fra alle links i menuen.
-          // Dette sørger for, at kun ét link kan være aktivt ad gangen (det, der er klikket på).
+      // Fjerner klassen "active" fra alle links i menuen
+      menuLinks.forEach(link => link.classList.remove('active'));
+      // Dette sørger for, at kun ét link kan være aktivt ad gangen (det, der er klikket på).
 
-          e.currentTarget.classList.add('active'); 
-          // Tilføjer klassen "active" til det link, som brugeren lige har klikket på.
-          // Klassen "active" kan bruges til at ændre linkets udseende (f.eks. gøre det fremhævet).
-      });
+      // Tilføjer klassen "active" til det link, brugeren lige har klikket på
+      e.currentTarget.classList.add('active'); 
+      // "e.currentTarget" refererer til det element, der har udløst hændelsen (her det link, der blev klikket på).
+      // Klassen "active" bruges ofte til at fremhæve linket, f.eks. med farve eller en anden stil.
   });
+});
 });
 
 
@@ -63,11 +69,17 @@ const slides = document.querySelectorAll('.carousel-element');
 const dotsContainer = document.querySelector('.carousel-dots'); 
 // Dette finder det HTML-element, hvor navigationsprikkerne skal placeres.
 
-let currentIndex = 0; // Vi starter med det første slide i karusellen (index 0).
-let startX = 0;       // Bruges til at gemme startpositionen, når brugeren begynder at swipe.
-let endX = 0;         // Bruges til at gemme slutpositionen, når brugeren slipper skærmen.
+let currentIndex = 0; // Holder styr på, hvilket slide der vises lige nu. Vi starter med det første slide (index 0). 
+// Dette bruges også til at opdatere de visuelle prikker, så de viser, hvilket slide der er aktivt.
 
+let startX = 0;       // Gemmer den vandrette startposition (x-koordinat), når brugeren begynder at swipe.
+// Swipe-funktionen bruger denne værdi til at afgøre, hvor brugeren starter sin bevægelse.
+
+let endX = 0;         // Gemmer den vandrette slutposition (x-koordinat), når brugeren slipper skærmen efter at have swipet.
+// Ved at sammenligne endX med startX beregner vi, om brugeren har swipet til højre eller venstre, 
+// og vi opdaterer både det aktive slide og de tilhørende prikker.
 // Opret navigationsprikker baseret på antal slides
+
 slides.forEach((_, index) => { 
   // Vi looper gennem alle slides. "index" repræsenterer nummeret på det nuværende slide.
   
@@ -130,8 +142,24 @@ function prevSlide() {
   updateCarousel(); 
   // Opdater karusellen for at vise det nye aktive slide og prik.
 }
+// Når du swiper med fingeren på skærmen, registrerer vi, hvor fingeren **starter** (startX) og **slutter** (endX).
+// Forskellen mellem de to positioner (startX - endX eller endX - startX) fortæller os, hvor meget fingeren er blevet trukket.
 
-// Håndtering af swipe-bevægelser (kun relevant på touch-enheder som mobiler)
+// **Hvorfor 50 pixels?**
+// 1. Når du bare klikker på skærmen (uden at trække fingeren), er bevægelsen meget lille.
+//    Din finger kan måske flytte sig nogle få pixels (fx 2-10 pixels) uden at du swiper rigtigt.
+//    Så vi siger: Hvis bevægelsen er mindre end **50 pixels**, er det for småt til at være en swipe, og vi ignorerer det.
+
+// 2. Hvis du **trækker fingeren** på skærmen (swiper), bevæger du normalt fingeren over en større afstand, fx 50 pixels eller mere.
+//    Det er derfor, vi har valgt **50 pixels** som en tærskel:
+//    - Det er langt nok til at skelne mellem en lille utilsigtet bevægelse og en reel swipe.
+//    - Det betyder, at systemet kun reagerer på en bevidst handling (en rigtig swipe).
+
+// **Så hvad sker der, hvis du klikker 50 pixels væk?**
+// - Det kan du faktisk ikke gøre med en enkelt berøring, fordi et klik normalt ikke skaber en bevægelse.
+// - For at nå 50 pixels forskel skal du fysisk **trække fingeren** på skærmen fra startpositionen til slutpositionen.
+// - Systemet ved derfor, at det var en swipe og ikke et klik, fordi der er en reel bevægelse af fingeren mellem start og slut.
+
 slides.forEach(slide => {
   slide.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX; 
@@ -193,3 +221,49 @@ fadeInElements.forEach(element => {
   observer.observe(element);
   // Dette betyder, at IntersectionObserver nu holder øje med dette specifikke element.
 });
+
+/**
+ *  * Hvad er DOM-manipulation?
+ * 
+ * DOM-manipulation refererer til processen, hvor JavaScript bruges til at ændre eller interagere
+ * med HTML-elementer og deres egenskaber i dokumentets struktur (DOM - Document Object Model).
+ * 
+ * Dette gør det muligt at:
+ * 1. Ændre indholdet af elementer (f.eks. opdatere tekst eller billeder).
+ * 2. Tilføje, fjerne eller oprette HTML-elementer dynamisk.
+ * 3. Ændre klasser eller stilarter på elementer for at opdatere deres udseende.
+ * 4. Reagere på brugerinteraktioner som klik, tastetryk eller scroll og opdatere siden i realtid.
+ * 
+ * Kort sagt bruges DOM-manipulation til at gøre websider interaktive og dynamiske ved at tilpasse,
+ * hvordan de præsenterer sig for brugeren.
+ * 
+ * 
+ * DOM-manipulation i koden:
+ * 
+ * 1. **Hente elementer fra DOM'en**:
+ *    - `document.querySelector` og `document.querySelectorAll` bruges til at hente specifikke elementer som
+ *      menuikoner, links, slides og dots-containeren.
+ *    - Dette gør det muligt at manipulere elementerne baseret på brugerens interaktioner.
+ * 
+ * 2. **Ændring af klasser på elementer**:
+ *    - `classList.add`, `classList.remove`, og `classList.toggle` bruges til dynamisk at ændre elementers udseende eller tilstand:
+ *      - F.eks. toggles klassen `open` for at vise eller skjule menuen.
+ *      - Klassen `active` tilføjes eller fjernes for at fremhæve det aktive menu-link, slide eller prik.
+ * 
+ * 3. **Oprettelse af nye DOM-elementer**:
+ *    - `document.createElement` bruges til at oprette nye HTML-elementer (f.eks. prikker i karusellen).
+ *    - Disse elementer tilføjes derefter til DOM'en ved hjælp af `appendChild`.
+ * 
+ * 4. **Interaktive hændelser**:
+ *    - `addEventListener` bruges til at lytte efter klik og swipe-events:
+ *      - Klik på menu-links eller burger-menuen opdaterer DOM'en ved at ændre klasser.
+ *      - Swipe-bevægelser registreres med `touchstart`, `touchmove`, og `touchend`, hvorefter slides opdateres.
+ * 
+ * 5. **Observering af elementer**:
+ *    - `IntersectionObserver` bruges til at overvåge, om elementer med klassen `fade-in` er synlige i viewporten.
+ *      - Når et element bliver synligt, tilføjes klassen `animate`, som udløser en CSS-animation.
+ * 
+ * Samlet set bruges DOM-manipulation til at gøre websiden interaktiv og dynamisk:
+ * - Brugerhandlinger som klik eller swipe opdaterer menuen, karusellen eller animationer på siden.
+ * - Nye elementer genereres og tilpasses i realtid, mens tilstanden af eksisterende elementer opdateres efter behov.
+ */

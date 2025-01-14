@@ -627,6 +627,15 @@ img {
   height: auto; /* Bevare proportionerne */
 }
 
+
+/* 
+CSS-animationer giver mulighed for at animere elementer ved at ændre deres egenskaber over tid.
+De består af to hoveddele:
+keyframes og animationsegenskaber:
+Keyframes bruges til at definere animationens trin, fra start til slut.
+Procentdele (0% til 100%) angiver, hvordan elementets egenskaber skal ændre sig på forskellige tidspunkter.*/
+
+
 /* 
 Tilføjer en op-og-ned animation til elementer med klassen "animated-element". 
 Animationen varer 2 sekunder, kører uendeligt og skifter retning ved hver gentagelse. 
@@ -634,6 +643,7 @@ Animationen varer 2 sekunder, kører uendeligt og skifter retning ved hver genta
 ".champagneglas" har en forsinkelse på 1 sekund for at skabe en forskudt effekt.
 Keyframes "moveUpAndDown" styrer bevægelsen, hvor elementet flyttes 10px op og ned
 */
+
 .animated-element {
   animation: moveUpAndDown 2s ease-in-out infinite alternate;
 }
@@ -657,7 +667,7 @@ Keyframes "moveUpAndDown" styrer bevægelsen, hvor elementet flyttes 10px op og 
 /* Keyframes for op-og-ned-bevægelse */
 @keyframes moveUpAndDown {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(-10px); 
   }
   100% {
     transform: translateY(10px);
